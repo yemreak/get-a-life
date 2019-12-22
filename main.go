@@ -34,12 +34,12 @@ func main() {
 	for i := 0; i < len(commits); i++ {
 		commitCount := 1
 		if commits[i] == 2 {
-			commitCount = 25
+			commitCount = 50
 		}
 		daykey := fmt.Sprintf("%d-%d-%d", yAgo.Year(), yAgo.Month(), yAgo.Day())
 
 		if ad, ok := predefined[daykey]; ok {
-			commitCount = commitCount - ad + ad
+			commitCount = commitCount - ad
 		}
 
 		fmt.Println( commitCount, " commits for ",dateFormat(yAgo))
